@@ -1,5 +1,4 @@
-#require 'paperclipdb/storage.rb'
-require 'paperclipdb'
+require 'paperclipdb/storage/database'
 require "rails"
 require "paperclip"
 

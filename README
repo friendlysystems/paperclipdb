@@ -1,7 +1,7 @@
 Paperclipdb
 ===========
 
-Database storage support for paperclip file attachment plugin.
+Database storage support for paperclip file attachment plugin (Rails 3)
 
 Install
 =======
@@ -20,4 +20,4 @@ class ModelWithAttach < ActiveRecord::Base
 					  :url => "/:class/:attachment/:id/:style/:basename.:extension"
 end
 
-Copyright (c) 2010 [Christian Berkhoff], released under the MIT license
+Copyright (c) 2011 [Christian Berkhoff], released under the MIT license

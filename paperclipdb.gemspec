@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Martin Caruso}]
+  s.authors = [%q{Christian Berkhoff}, %q{Martin Caruso}]
   s.date = %q{2011-07-04}
-  s.description = %q{Database storage support for paperclip file attachment plugin}
-  s.email = %q{caruso.martin@gmail.com}
+  s.description = %q{Database storage support for paperclip file attachment plugin. Forked from paperclipdb by Martin Caruso.}
+  s.email = %q{chris@acid.cl}
   s.extra_rdoc_files = [
     "README"
   ]
@@ -31,14 +31,18 @@ Gem::Specification.new do |s|
     "init.rb",
     "install.rb",
     "lib/paperclipdb.rb",
-    "lib/paperclipdb/storage.rb",
+    "lib/paperclipdb/storage/database.rb",
     "lib/tasks/paperclipdb.rake",
     "paperclipdb.gemspec",
+    "test/dummy/log/development.log",
+    "test/dummy/log/production.log",
+    "test/dummy/log/server.log",
+    "test/dummy/log/test.log",
     "test/paperclipdb_test.rb",
     "test/test_helper.rb",
     "uninstall.rb"
   ]
-  s.homepage = %q{http://github.com/mcaruso85/paperclipdb}
+  s.homepage = %q{https://github.com/cberkhoff/paperclipdb}
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.5}
   s.summary = %q{Database storage support for paperclip file attachment plugin.}
