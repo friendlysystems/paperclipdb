@@ -1,3 +1,3 @@
 ActionController::Routing::Routes.draw do |map|
-  map.connect 'paperclipdb/*dir_name/:file_name.:format', :controller => 'paperclipdb/attachments', :action => 'get_attachment'
+  match 'paperclipdb/*dir_name/:file_name.:format' => 'paperclipdb/attachments#get_attachment'
 end

@@ -1,9 +1,9 @@
-require 'paperclipdb/storage.rb'
+#require 'paperclipdb/storage.rb'
+require 'paperclipdb'
+require "rails"
+require "paperclip"
 
 module Paperclipdb
-  class << self
-    def self.version
-      "0.1"
-    end
+  class Engine < Rails::Engine
   end
 end

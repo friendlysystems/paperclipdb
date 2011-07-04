@@ -31,6 +31,7 @@ begin
     gemspec.email = "caruso.martin@gmail.com"
     gemspec.homepage = "http://github.com/mcaruso85/paperclipdb"
     gemspec.authors = ["Martin Caruso"]
+    gemspec.add_dependency 'paperclip'
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
