@@ -27,10 +27,10 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "paperclipdb"
     gemspec.summary = "Database storage support for paperclip file attachment plugin."
-    gemspec.description = "Database storage support for paperclip file attachment plugin"
-    gemspec.email = "caruso.martin@gmail.com"
-    gemspec.homepage = "http://github.com/mcaruso85/paperclipdb"
-    gemspec.authors = ["Martin Caruso"]
+    gemspec.description = "Database storage support for paperclip file attachment plugin. Forked from paperclipdb by Martin Caruso."
+    gemspec.email = "chris@acid.cl"
+    gemspec.homepage = "https://github.com/cberkhoff/paperclipdb"
+    gemspec.authors = ["Christian Berkhoff","Martin Caruso"]
     gemspec.add_dependency 'paperclip'
   end
 rescue LoadError
