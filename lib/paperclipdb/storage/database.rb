@@ -15,7 +15,7 @@ module Paperclip
       private :override_default_options
 
       def exists?(style = default_style)
-        puts("exists?  #{style}")
+        puts("[paperclipdb] exists?  #{style}")
         return getAttachment(path(style)).nil?
       end
 
@@ -25,7 +25,7 @@ module Paperclip
       end
 
       def to_file style = default_style
-        puts("to_file  #{style}")
+        puts("[paperclipdb] to_file  #{style}")
         if @queued_for_write[style]
           @queued_for_write[style]
         elsif exists?(style)
@@ -39,9 +39,9 @@ module Paperclip
       end
 
       def flush_writes
-        puts("[paperclip] Writing files #{@queued_for_write.count}")
+        puts("[paperclipdb] Writing files #{@queued_for_write.count}")
         @queued_for_write.each do |style, file|
-          puts("[paperclip] Writing files for #{file} #{style}")
+          puts("[paperclipdb] Writing files for #{file} #{style}")
           attachment = Paperclipdb::Attachment.new
           attachment.base_name = File.basename(path(style))
           attachment.dir_name = File.dirname(path(style))
@@ -55,7 +55,7 @@ module Paperclip
 
       def flush_deletes
         @queued_for_delete.each do |path|
-          puts("[paperclip] Deleting files for #{path}")
+          puts("[paperclipdb] Deleting files for #{path}")
           attachment = getAttachment(path)
           if (!attachment.nil?)
           attachment.destroy
