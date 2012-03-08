@@ -9,8 +9,8 @@ module Paperclip
       end
 
       def override_default_options(base)
-        @path = @url
-        @url = "/paperclipdb" + @url
+        @options[:path] = @options[:url]
+        @options[:url] = "/paperclipdb" + @options[:url]
       end
       private :override_default_options
 
