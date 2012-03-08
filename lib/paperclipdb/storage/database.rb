@@ -1,7 +1,7 @@
 module Paperclip
   module Storage
     module Database
-      
+
       def self.extended(base)
         base.instance_eval do
           override_default_options base
@@ -20,18 +20,19 @@ module Paperclip
       end
 
       def getAttachment(file_path)
-        return Paperclipdb::Attachment.find(:first, :conditions => [ "base_name = ? AND dir_name = ?", File.basename(file_path), File.dirname(file_path) ])
+        return Paperclipdb::Attachment.find(:first,
+              :conditions => [ "base_name = ? AND dir_name = ?", File.basename(file_path), File.dirname(file_path) ])
       end
 
       def to_file style = default_style
         puts("to_file  #{style}")
         if @queued_for_write[style]
-        @queued_for_write[style]
+          @queued_for_write[style]
         elsif exists?(style)
           attachment = getAttachment(path(style))
           tempfile = Tempfile.new attachment.base_name
-        tempfile.write attachment.file_data
-        tempfile
+          tempfile.write attachment.file_data
+          tempfile
         else
           nil
         end
