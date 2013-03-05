@@ -45,7 +45,7 @@ module Paperclip
           attachment = Paperclipdb::Attachment.new
           attachment.base_name = File.basename(path(style))
           attachment.dir_name = File.dirname(path(style))
-          attachment.content_type = self.instance_variable_get("@_#{self.name.to_s}_content_type")
+          attachment.content_type = file.content_type
           attachment.file_size = file.size
           attachment.file_data = file.read
           attachment.save
